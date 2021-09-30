@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 clear
 cd ~
@@ -11,13 +11,13 @@ ipaddr=${ipaddr:-$default}
 echo
 
 echo -n "Update apt and upgrade installed packages... "
-apt-get -qq update > /dev/null 2>&1
-apt-get -qqy upgrade > /dev/null 2>&1
+apt-get update -y > /dev/null 2>&1
+apt-get upgrade -y > /dev/null 2>&1
 echo "[ DONE ]"
 
 echo -n "Install required and needed packages..."
-apt-get -qqy install build-essential > /dev/null 2>&1
-apt-get -qqy install screen zip grepcidr > /dev/null 2>&1
+apt-get install build-essential -y > /dev/null 2>&1
+apt-get install screen zip grepcidr -y > /dev/null 2>&1
 echo "[ DONE ]"
 
 echo
@@ -26,9 +26,9 @@ cd
 
 # openvpn
 echo -n "Installing openvpn package... "
-apt-get -qqy install openvpn > /dev/null 2>&1
-apt-get -qqy install openssl > /dev/null 2>&1
-apt-get -qqy install easy-rsa > /dev/null 2>&1
+apt-get install openvpn -y > /dev/null 2>&1
+apt-get install openssl -y > /dev/null 2>&1
+apt-get install easy-rsa -y > /dev/null 2>&1
 echo -e "[${green}DONE${noclr}]"
 
 echo "Configure openvpn package... "
